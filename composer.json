@@ -1,0 +1,31 @@
+{
+    "name": "pixelatom/error",
+    "description": "Provides a PHP class to convert traditional PHP errors to handy Exceptions.",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["url"],
+    "homepage": "https://github.com/Pixelatom/Error",
+    "time": "2013-03-27",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Javier Arias",
+            "email": "javier.arias@pixelatom.com",
+            "homepage": "http://www.pixelatom.org",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "contact@pixelatom.org",
+        "issues": "https://github.com/Pixelatom/Error/issues",
+        "source": "https://github.com/Pixelatom/Error"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Pixelatom": "src/"
+        }
+    }
+}
