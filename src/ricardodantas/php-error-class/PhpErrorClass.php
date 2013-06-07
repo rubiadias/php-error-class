@@ -46,8 +46,8 @@ class PhpErrorClass{
         if($this->email_configs['smtp_secure'] !== false)
             $mail->SMTPSecure = $this->email_configs['smtp_secure'];
 
-        $mail->From = 'from@example.com';
-        $mail->FromName = 'Mailer';
+        $mail->From = $this->email_configs['from_email'];
+        $mail->FromName = $this->email_configs['from_name'];
 
         $mail->AddAddress('ellen@example.com');               // Name is optional
 
