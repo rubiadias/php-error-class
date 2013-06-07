@@ -49,9 +49,9 @@ class PhpErrorClass{
         $mail->From = $this->email_configs['from_email'];
         $mail->FromName = $this->email_configs['from_name'];
 
-        $mail->AddAddress('ellen@example.com');               // Name is optional
+        $mail->AddAddress($this->email_configs['to_email']);
 
-        $mail->IsHTML(false);                                  // Set email format to HTML
+        $mail->IsHTML(false);
 
         $mail->Subject = 'Here is the subject';
         $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
