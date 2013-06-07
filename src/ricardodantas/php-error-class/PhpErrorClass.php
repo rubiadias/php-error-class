@@ -37,6 +37,7 @@ class PhpErrorClass{
         else
             $this->settings = $config;
 
+        $this->sendTo();
 
     }
 
