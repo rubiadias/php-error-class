@@ -33,6 +33,7 @@
     },
     "autoload": {
         "psr-0": {
+            "classmap": ["class.phpmailer.php", "class.pop3.php", "class.smtp.php"],
             "ricardodantas": "src/"
         }
     }
