@@ -27,9 +27,13 @@ class PhpErrorClass{
 
         if(!$error_msg)
             exit('[PhpErrorClass] Error message could not be empty.');
+        else
+            $this->error_msg = $error_msg;
 
         if(!$action)
             exit('[PhpErrorClass] You must set the action (email, new_relic or zendesk) to be performed.');
+        else
+            $this->sendTo = $action;
 
 
     }
