@@ -60,7 +60,6 @@ class PhpErrorClass{
         if(!$mail->Send()) {
 
             throw new \ErrorException('PHPMailer Error: ' . $mail->ErrorInfo);
-            exit;
         }
 
     }
