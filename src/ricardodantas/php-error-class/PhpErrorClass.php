@@ -38,9 +38,9 @@ class PhpErrorClass{
 
         $mail = new PHPMailer;
 
-        $mail->IsSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = $this->email_configs['smtp'];                    // Specify main and backup server
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->IsSMTP();
+        $mail->Host = $this->email_configs['smtp'];
+        $mail->SMTPAuth = $this->email_configs['smtp_auth'];
         $mail->Username = 'jswan';                            // SMTP username
         $mail->Password = 'secret';                           // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
