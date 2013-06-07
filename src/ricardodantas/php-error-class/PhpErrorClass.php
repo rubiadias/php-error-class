@@ -45,6 +45,7 @@ class PhpErrorClass{
     protected function sendToEmail(){
 
         try{
+
             $mail = new PHPMailer;
 
             $mail->IsSMTP();
@@ -79,6 +80,11 @@ class PhpErrorClass{
     }
 
     protected function sendToNewRelic(){
+
+        use Intouch\Newrelic\Newrelic;
+        $newrelic = new Newrelic( true );
+
+        $newrelic->setAppName($this->settings['app_name'], $this->settings['license']);
 
     }
 
