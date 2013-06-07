@@ -34,6 +34,7 @@ class PhpErrorClass{
     }
 
     protected function sendToEmail(){
+
         try{
             $mail = new PHPMailer;
 
