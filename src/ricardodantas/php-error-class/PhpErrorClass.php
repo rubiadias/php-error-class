@@ -25,11 +25,12 @@ class PhpErrorClass{
 
     public static function register($error_msg, $action, $config = array()){
 
-        if($error_msg){
-            return $error_msg;
-        }else{
+        if(!$error_msg)
             exit('[PhpErrorClass] Error message could not be empty.');
-        }
+
+        if(!$action)
+            exit('[PhpErrorClass] You must set the action (email, new_relic or zendesk) to be performed.');
+
 
     }
 
