@@ -25,10 +25,6 @@ class PhpErrorClass{
 
     public static function register($error_msg, $action, $config = array()){
 
-    }
-
-    protected function setError($error_msg){
-
         if($error_msg){
             return $error_msg;
         }else{
@@ -36,6 +32,7 @@ class PhpErrorClass{
         }
 
     }
+
 
     protected function sendToEmail(){
 
