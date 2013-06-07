@@ -3,11 +3,13 @@
 namespace ricardodantas\PhpErrorClass;
 
 class PhpErrorClass{
+
     protected static $registered = false;
     protected static $old_error_reporting = null;
     protected static $old_display_error = null;
-    protected static $send_to = 'email';
-    protected static $email_configs = array(
+
+    protected $send_to = 'email';
+    protected $email_configs = array(
                                         'smtp' => null,
                                         'smtp_auth' => true,
                                         'username' => null,
@@ -37,7 +39,7 @@ class PhpErrorClass{
         $mail = new PHPMailer;
 
         $mail->IsSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp1.example.com';                    // Specify main and backup server
+        $mail->Host = self::email_configs[''];                    // Specify main and backup server
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         $mail->Username = 'jswan';                            // SMTP username
         $mail->Password = 'secret';                           // SMTP password
