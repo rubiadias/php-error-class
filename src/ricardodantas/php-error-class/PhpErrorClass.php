@@ -41,9 +41,9 @@ class PhpErrorClass{
         $mail->IsSMTP();
         $mail->Host = $this->email_configs['smtp'];
         $mail->SMTPAuth = $this->email_configs['smtp_auth'];
-        $mail->Username = 'jswan';                            // SMTP username
-        $mail->Password = 'secret';                           // SMTP password
-        $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+        $mail->Username = $this->email_configs['username'];
+        $mail->Password = $this->email_configs['password'];
+        $mail->SMTPSecure = 'tls';
 
         $mail->From = 'from@example.com';
         $mail->FromName = 'Mailer';
