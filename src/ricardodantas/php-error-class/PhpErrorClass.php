@@ -39,7 +39,7 @@ class PhpErrorClass{
         $mail = new PHPMailer;
 
         $mail->IsSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = self::email_configs[''];                    // Specify main and backup server
+        $mail->Host = $this->email_configs['smtp'];                    // Specify main and backup server
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         $mail->Username = 'jswan';                            // SMTP username
         $mail->Password = 'secret';                           // SMTP password
@@ -66,7 +66,7 @@ class PhpErrorClass{
 
     protected function sendTo(){
 
-        switch (self::send_to){
+        switch ($this->send_to){
             case 'new_relic':
                 self::sendToNewRelic();
             break;
