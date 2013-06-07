@@ -58,9 +58,9 @@ class PhpErrorClass{
         $mail->AltBody = $this->email_configs['content'];
 
         if(!$mail->Send()) {
-           echo 'Message could not be sent.';
-           echo 'Mailer Error: ' . $mail->ErrorInfo;
-           exit;
+
+            throw new \ErrorException('PHPMailer Error: ' . $mail->ErrorInfo);
+            exit;
         }
 
     }
