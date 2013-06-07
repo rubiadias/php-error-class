@@ -2,7 +2,7 @@
 
 namespace ricardodantas\PhpErrorClass;
 
-class Handler{
+class PhpErrorClass{
     protected static $registered = false;
     protected static $old_error_reporting = null;
     protected static $old_display_error = null;
