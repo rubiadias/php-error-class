@@ -1,10 +1,10 @@
 {
-    "name": "ricardodantas/PHPErrorClass",
+    "name": "ricardodantas/php-error-class",
     "description": "Provides a PHP class to convert traditional PHP errors to handy Exceptions based on https://github.com/Pixelatom/Error.",
     "version": "1.0",
     "type": "library",
     "keywords": ["url"],
-    "homepage": "https://github.com/ricardodantas/PHPErrorClass",
+    "homepage": "https://github.com/ricardodantas/php-error-class",
     "time": "2013-03-27",
     "license": "MIT",
     "authors": [
@@ -24,8 +24,8 @@
     ],
     "support": {
         "email": "ricardodantas@gmail.com",
-        "issues": "https://github.com/ricardodantas/PHPErrorClass/issues",
-        "source": "https://github.com/ricardodantas/PHPErrorClass"
+        "issues": "https://github.com/ricardodantas/php-error-class/issues",
+        "source": "https://github.com/ricardodantas/php-error-class"
     },
     "require": {
         "php": ">=5.3.0"
