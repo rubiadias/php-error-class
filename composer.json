@@ -19,8 +19,8 @@
             "email": "ricardodantas@gmail.com",
             "homepage": "http://ricardodantas.com.br",
             "role": "Developer"
-        }        
-        
+        }
+
     ],
     "support": {
         "email": "ricardodantas@gmail.com",
@@ -28,7 +28,8 @@
         "source": "https://github.com/ricardodantas/php-error-class"
     },
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "phpmailer/phpmailer": "*"
     },
     "autoload": {
         "psr-0": {
