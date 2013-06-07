@@ -71,13 +71,13 @@ class PhpErrorClass{
     protected function sendTo(){
 
         switch ($this->send_to){
-            case 'new_relic':
-                self::sendToNewRelic();
-            break;
+            // case 'new_relic':
+            //     $this->sendToNewRelic();
+            // break;
 
-            case 'zendesk':
-                self::sendToZendesk();
-            break;
+            // case 'zendesk':
+            //     $this->sendToZendesk();
+            // break;
 
             default:
                 self::sendToEmail();
