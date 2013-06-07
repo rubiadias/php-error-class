@@ -43,7 +43,7 @@ class PhpErrorClass{
         $mail->SMTPAuth = $this->email_configs['smtp_auth'];
         $mail->Username = $this->email_configs['username'];
         $mail->Password = $this->email_configs['password'];
-        $mail->SMTPSecure = 'tls';
+        $mail->SMTPSecure = $this->email_configs['smtp_secure'];
 
         $mail->From = 'from@example.com';
         $mail->FromName = 'Mailer';
