@@ -23,7 +23,7 @@ class PhpErrorClass{
                                     );
 
 
-    public static function register($error_msg){
+    public static function register($error_msg, $action, $config = array()){
 
     }
 
