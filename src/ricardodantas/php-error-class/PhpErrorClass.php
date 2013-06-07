@@ -34,32 +34,36 @@ class PhpErrorClass{
     }
 
     protected function sendToEmail(){
+        try{
+            $mail = new PHPMailer;
 
-        $mail = new PHPMailer;
+            $mail->IsSMTP();
+            $mail->Host = $this->email_configs['smtp'];
+            $mail->SMTPAuth = $this->email_configs['smtp_auth'];
+            $mail->Username = $this->email_configs['username'];
+            $mail->Password = $this->email_configs['password'];
 
-        $mail->IsSMTP();
-        $mail->Host = $this->email_configs['smtp'];
-        $mail->SMTPAuth = $this->email_configs['smtp_auth'];
-        $mail->Username = $this->email_configs['username'];
-        $mail->Password = $this->email_configs['password'];
+            if($this->email_configs['smtp_secure'] !== false)
+                $mail->SMTPSecure = $this->email_configs['smtp_secure'];
 
-        if($this->email_configs['smtp_secure'] !== false)
-            $mail->SMTPSecure = $this->email_configs['smtp_secure'];
+            $mail->From = $this->email_configs['from_email'];
+            $mail->FromName = $this->email_configs['from_name'];
 
-        $mail->From = $this->email_configs['from_email'];
-        $mail->FromName = $this->email_configs['from_name'];
+            $mail->AddAddress($this->email_configs['to_email']);
 
-        $mail->AddAddress($this->email_configs['to_email']);
+            $mail->IsHTML(false);
 
-        $mail->IsHTML(false);
+            $mail->Subject = $this->email_configs['subject'];
+            $mail->Body    = $this->email_configs['content'];
+            $mail->AltBody = $this->email_configs['content'];
 
-        $mail->Subject = $this->email_configs['subject'];
-        $mail->Body    = $this->email_configs['content'];
-        $mail->AltBody = $this->email_configs['content'];
+            if(!$mail->Send())
+                throw new \ErrorException('PHPMailer Error: ' . $mail->ErrorInfo);
 
-        if(!$mail->Send()) {
+        }catch(Exception $e){
 
-            throw new \ErrorException('PHPMailer Error: ' . $mail->ErrorInfo);
+            exit($e->getMessage());
+
         }
 
     }
