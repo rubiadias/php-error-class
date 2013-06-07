@@ -35,6 +35,11 @@ class PhpErrorClass{
         else
             $this->sendTo = $action;
 
+        if(!$config)
+            exit('[PhpErrorClass] You must set the settings for this action.');
+        else
+            $this->settings = $config;
+
 
     }
 
