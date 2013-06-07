@@ -14,7 +14,7 @@ class PhpErrorClass{
                                         'smtp_auth' => true,
                                         'username' => null,
                                         'password' => null,
-                                        'smtp_secure' => false,
+                                        'smtp_secure' => false, // ssl or tsl
                                         'from_email' => null,
                                         'from_name' => null,
                                         'to_email' => null,
@@ -42,7 +42,9 @@ class PhpErrorClass{
         $mail->SMTPAuth = $this->email_configs['smtp_auth'];
         $mail->Username = $this->email_configs['username'];
         $mail->Password = $this->email_configs['password'];
-        $mail->SMTPSecure = $this->email_configs['smtp_secure'];
+
+        if($this->email_configs['smtp_secure'] !== false)
+            $mail->SMTPSecure = $this->email_configs['smtp_secure'];
 
         $mail->From = 'from@example.com';
         $mail->FromName = 'Mailer';
