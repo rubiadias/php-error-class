@@ -53,9 +53,9 @@ class PhpErrorClass{
 
         $mail->IsHTML(false);
 
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Subject = $this->email_configs['subject'];
+        $mail->Body    = $this->email_configs['content'];
+        $mail->AltBody = $this->email_configs['content'];
 
         if(!$mail->Send()) {
            echo 'Message could not be sent.';
