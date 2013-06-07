@@ -1,6 +1,6 @@
 {
     "name": "ricardodantas/php-error-class",
-    "description": "Provides a PHP class (based on https://github.com/Pixelatom/Error) to convert traditional PHP errors to handy Exceptions and send it to your email (support to zendesk and new relic are coming).",
+    "description": "Provides a PHP class to handle errors and send it to your email (support to zendesk and new relic are coming).",
     "version": "1.0",
     "type": "library",
     "keywords": ["url"],
