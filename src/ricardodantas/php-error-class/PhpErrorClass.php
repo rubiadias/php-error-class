@@ -22,15 +22,18 @@ class PhpErrorClass{
                                         'content' => null
                                     );
 
-    static public function handler($code, $string, $file, $line){
-        switch ($code) {
-            case E_DEPRECATED: // ignores new DEPRECATED error to allow developers to use third party libraries
-                return;
-            case E_WARNING:
-                throw new \ErrorException($string, $code, $code,$file,$line);
-            default:
-                throw new \ErrorException($string, $code, $code,$file,$line);
+    public function __construct(){
+
+    }
+
+    public function setError($error_msg){
+
+        if($error_msg){
+
+        }else{
+            exit('[PhpErrorClass] Error message could not be empty.');
         }
+
     }
 
     protected function sendToEmail(){
@@ -86,31 +89,5 @@ class PhpErrorClass{
 
     }
 
-    static public function register(){
-        if (!self::$registered){
-            // saves old error reporting
-            self::$old_error_reporting = error_reporting();
-            self::$old_display_error = ini_get('display_errors');
 
-            // set new error reporting configuration
-            ini_set('display_errors','1');
-            error_reporting(E_ALL);
-
-            // set error handling
-            set_error_handler(array(__CLASS__,'handler'), E_ALL);
-            self::$registered = true;
-        }
-
-    }
-
-    static public function unregister(){
-        if (self::$registered){
-            // restore old configuration values
-            ini_set('display_errors',self::$old_display_error);
-            error_reporting(self::$old_error_reporting);
-
-            restore_error_handler();
-            self::$registered = false;
-        }
-    }
 }
