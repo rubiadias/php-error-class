@@ -4,10 +4,7 @@ namespace ricardodantas\PhpErrorClass;
 
 class PhpErrorClass{
 
-    protected static $registered = false;
-    protected static $old_error_reporting = null;
-    protected static $old_display_error = null;
-
+    protected $settings = array();
     protected $send_to = 'email';
     protected $email_configs = array(
                                         'smtp' => null,
