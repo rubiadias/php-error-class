@@ -1,12 +1,12 @@
 <?php
 
-namespace Pixelatom\Error;
+namespace ricardodantas\PhpErrorClass;
 
 class Handler{
     protected static $registered = false;
     protected static $old_error_reporting = null;
     protected static $old_display_error = null;
-    
+
     static public function handler($code, $string, $file, $line){
         switch ($code) {
             case E_DEPRECATED: // ignores new DEPRECATED error to allow developers to use third party libraries
@@ -22,7 +22,7 @@ class Handler{
             // saves old error reporting
             self::$old_error_reporting = error_reporting();
             self::$old_display_error = ini_get('display_errors');
-            
+
             // set new error reporting configuration
             ini_set('display_errors','1');
             error_reporting(E_ALL);
@@ -31,14 +31,14 @@ class Handler{
             set_error_handler(array(__CLASS__,'handler'), E_ALL);
             self::$registered = true;
         }
-        
+
     }
     static public function unregister(){
         if (self::$registered){
             // restore old configuration values
             ini_set('display_errors',self::$old_display_error);
             error_reporting(self::$old_error_reporting);
-            
+
             restore_error_handler();
             self::$registered = false;
         }
