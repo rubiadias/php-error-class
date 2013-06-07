@@ -19,7 +19,7 @@ class PhpErrorClass{
                                         'from_name' => null,
                                         'to_email' => null,
                                         'subject' => '[Error Report]',
-                                        'content' => self::error_message
+                                        'content' => null
                                     );
 
     static public function handler($code, $string, $file, $line){
