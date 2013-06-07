@@ -22,7 +22,8 @@ class PhpErrorClass{
                                         'content' => null
                                     );
 
-    public function __construct(){
+
+    public static function register($error_msg){
 
     }
 
