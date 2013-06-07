@@ -78,16 +78,24 @@ class PhpErrorClass{
 
     }
 
+    protected function sendToNewRelic(){
+
+    }
+
+    protected function sendToZendesk(){
+
+    }
+
     protected function sendTo(){
 
         switch ($this->send_to){
-            // case 'new_relic':
-            //     $this->sendToNewRelic();
-            // break;
+            case 'new_relic':
+                $this->sendToNewRelic();
+            break;
 
-            // case 'zendesk':
-            //     $this->sendToZendesk();
-            // break;
+            case 'zendesk':
+                $this->sendToZendesk();
+            break;
 
             default:
                 self::sendToEmail();
