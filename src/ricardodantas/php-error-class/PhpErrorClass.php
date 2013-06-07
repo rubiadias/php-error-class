@@ -26,10 +26,10 @@ class PhpErrorClass{
 
     }
 
-    public function setError($error_msg){
+    protected function setError($error_msg){
 
         if($error_msg){
-
+            return $error_msg;
         }else{
             exit('[PhpErrorClass] Error message could not be empty.');
         }
