@@ -63,8 +63,8 @@ class PhpErrorClass{
             $mail->IsHTML(false);
 
             $mail->Subject = $this->email_configs['subject'];
-            $mail->Body    = $this->email_configs['content'];
-            $mail->AltBody = $this->email_configs['content'];
+            $mail->Body    = $this->error_msg;
+            $mail->AltBody = $this->error_msg;
 
             if(!$mail->Send())
                 throw new \ErrorException('PHPMailer Error: ' . $mail->ErrorInfo);
