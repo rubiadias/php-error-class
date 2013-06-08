@@ -98,18 +98,25 @@ class PhpErrorClass{
 
     protected function sendToZendesk(){
 
-        $zendesk = new zendesk();
-
-        $arr     = array("z_subject"=>"Help, my printer is on fire!",
-               "z_description"=>"help I need some help",
-               "z_recipient"=>"RECIPIENTEMAIL@EMAIL.EMAIL",
-               "z_name"=>"REQUESTERNAME",
-               "z_requester"=>"REQUESTEREMAIL@EMAIL.EMAIL"
+        $this->zendesk_configs = array(
+                "z_subject"=>"Help, my printer is on fire!",
+                "z_description"=>"help I need some help",
+                "z_recipient"=>"RECIPIENTEMAIL@EMAIL.EMAIL",
+                "z_name"=>"REQUESTERNAME",
+                "z_requester"=>"REQUESTEREMAIL@EMAIL.EMAIL"
               );
 
-        $create  = json_encode(array('ticket' => array('subject' => $arr['z_subject'], 'description' => $arr['z_description'], 'requester' => array('name' => $arr['z_name'], 'email' => $arr['z_requester']))), JSON_FORCE_OBJECT);
+        $create  = json_encode(array(
+            'ticket' => array(
+            'subject' => $this->zendesk_configs['z_subject'],
+            'description' => $this->zendesk_configs['z_description'],
+            'requester' => array('name' => $this->zendesk_configs['z_name'],
+            'email' => $this->zendesk_configs['z_requester']))),
+            JSON_FORCE_OBJECT
+            );
 
-        $data = $zendesk->call("/tickets", $create, "POST");
+        $zendesk = new zendesk();
+        $zendesk->call("/tickets", $create, "POST");
     }
 
     protected function sendTo(){
