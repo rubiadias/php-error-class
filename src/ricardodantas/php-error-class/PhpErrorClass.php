@@ -1,5 +1,7 @@
 <?php
 
+use Intouch\Newrelic\Newrelic;
+
 namespace ricardodantas\PhpErrorClass;
 
 class PhpErrorClass{
@@ -83,7 +85,7 @@ class PhpErrorClass{
 
     protected function sendToNewRelic(){
 
-        use Intouch\Newrelic\Newrelic;
+
         $newrelic = new Newrelic( true );
 
         $newrelic->setAppName($this->settings['app_name'], $this->settings['license']);
