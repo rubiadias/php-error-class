@@ -87,9 +87,10 @@ class PhpErrorClass{
 
     protected function sendToNewRelic(){
 
+        $this->new_relic_configs = $this->settings;
 
         $newrelic = new Newrelic( true );
-        $newrelic->setAppName( $this->settings['app_name'], $this->settings['license'] );
+        $newrelic->setAppName( $this->new_relic_configs['app_name'], $this->new_relic_configs['license'] );
         $newrelic->noticeError( $this->error_msg );
 
     }
