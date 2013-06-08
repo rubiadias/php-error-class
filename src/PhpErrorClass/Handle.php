@@ -131,19 +131,6 @@ class Handle{
 
     }
 
-    protected static function sendToAirbrake(){
-
-        $apiKey  = self::$settings['api_key'];
-        $options = self::$settings['options'];
-
-
-        $config = new \Airbrake\Configuration($apiKey, $options);
-        $client = new \Airbrake\Client($config);
-
-        $client->notifyOnError(self::$error_msg);
-
-    }
-
 
     protected static function notifyError(){
 
@@ -157,9 +144,9 @@ class Handle{
                 self::sendToZendesk();
             break;
 
-            case 'airbrake':
-                self::sendToAirbrake();
-            break;
+            // case 'airbrake':
+            //     self::sendToAirbrake();
+            // break;
 
             case 'email':
                 self::sendToEmail();
