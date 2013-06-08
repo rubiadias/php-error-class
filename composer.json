@@ -24,8 +24,8 @@
     "require": {
         "php": ">=5.3.0",
         "intouch/newrelic": "dev-master",
-        "phpmailer/phpmailer": "dev-master",
-        "malwarebytes/zendesk-api": "dev-master"
+        "phpmailer/phpmailer": "dev-master"
+
     },
     "autoload": {
         "psr-0": {
