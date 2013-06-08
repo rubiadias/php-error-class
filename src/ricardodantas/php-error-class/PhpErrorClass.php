@@ -8,6 +8,7 @@ class PhpErrorClass{
 
     protected $settings = array();
     protected $send_to = 'email';
+    protected $error_msg = null;
     protected $email_configs = array(
                                         'smtp' => null,
                                         'smtp_auth' => true,
