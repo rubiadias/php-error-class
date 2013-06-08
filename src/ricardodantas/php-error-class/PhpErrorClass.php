@@ -9,6 +9,7 @@ class PhpErrorClass{
     protected $settings = array();
     protected $send_to = 'email';
     protected $error_msg = null;
+    protected $new_relic_configs = array('app_name'=>null,'license'=>null);
     protected $email_configs = array(
                                         'smtp' => null,
                                         'smtp_auth' => true,
