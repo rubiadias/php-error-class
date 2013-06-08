@@ -7,7 +7,6 @@
     "homepage": "https://github.com/ricardodantas/php-error-class",
     "time": "2013-06-07",
     "license": "MIT",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Ricardo Dantas",
@@ -24,9 +23,9 @@
     },
     "require": {
         "php": ">=5.3.0",
-        "intouch/newrelic": "dev-master",
-        "phpmailer/phpmailer": "dev-master",
-        "malwarebytes/zendesk-api": "dev-master"
+        "intouch/newrelic": "*@dev",
+        "phpmailer/phpmailer": "*",
+        "malwarebytes/zendesk-api": "*@dev"
     },
     "autoload": {
         "psr-0": {
