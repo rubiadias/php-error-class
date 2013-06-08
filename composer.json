@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-0": {
-            "ricardodantas\\PhpErrorClass": "src/"
+            "ricardodantas\\php-error-class": "src/"
         }
     },
     "minimum-stability": "dev"
