@@ -2,6 +2,7 @@
     "name": "ricardodantas/php-error-class",
     "description": "Provides a PHP class to handle errors and notify you via email, Zendesk or New Relic.",
     "require": {
+        "php": ">=5.3.0",
         "phpmailer/phpmailer": "*",
         "intouch/newrelic": "*"
     },
