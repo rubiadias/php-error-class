@@ -3,7 +3,7 @@
     "description": "Provides a PHP class to handle errors and notify you via email, Zendesk or New Relic.",
     "version": "1.0",
     "type": "library",
-    "keywords": ["url"],
+    "keywords": ["error"],
     "homepage": "https://github.com/ricardodantas/php-error-class",
     "time": "2013-06-07",
     "license": "MIT",
