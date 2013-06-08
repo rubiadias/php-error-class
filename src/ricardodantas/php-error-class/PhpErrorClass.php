@@ -46,6 +46,8 @@ class PhpErrorClass{
 
         try{
 
+            $this->email_configs = $this->settings;
+
             $mail = new PHPMailer;
 
             $mail->IsSMTP();
