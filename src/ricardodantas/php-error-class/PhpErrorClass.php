@@ -1,6 +1,7 @@
 <?php
 
 use Intouch\Newrelic\Newrelic;
+use ZendeskApi\Client;
 
 namespace ricardodantas\PhpErrorClass;
 
@@ -13,9 +14,9 @@ class PhpErrorClass{
     protected $zendesk_configs = array(
                                     "subject" => null,
                                     "description" => null,
-                                    "recipient" => null,
-                                    "name" => "REQUESTERNAME",
-                                    "requester" => "REQUESTEREMAIL@EMAIL.EMAIL"
+                                    "recipient_email" => null,
+                                    "requester_name" => null,
+                                    "requester_email" => null
                                 );
 
     protected $new_relic_configs = array(
@@ -114,22 +115,30 @@ class PhpErrorClass{
         $this->zendesk_configs = $this->settings;
 
 
-        $create  = json_encode(array(
-            'ticket' => array(
-            'subject' => $this->zendesk_configs['subject'],
-            'description' => $this->zendesk_configs['description'],
-            'requester' => array('name' => $this->zendesk_configs['name'],
-            'email' => $this->zendesk_configs['requester']))),
+        $create  = json_encode(
+                array(
+                        'ticket' => array(
+                            'subject' => $this->zendesk_configs['subject'],
+                            'description' => $this->zendesk_configs['description'],
+                            'requester' => array('name' => $this->zendesk_configs['requester_name'],
+                            'email' => $this->zendesk_configs['requester_email']
+                        )
+                    )
+                ),
             JSON_FORCE_OBJECT
-            );
+        );
 
         $zendesk = new zendesk();
         $zendesk->call("/tickets", $create, "POST");
+
     }
+
+
 
     protected function sendTo(){
 
         switch ($this->send_to){
+
             case 'new_relic':
                 $this->sendToNewRelic();
             break;
@@ -139,7 +148,7 @@ class PhpErrorClass{
             break;
 
             default:
-                self::sendToEmail();
+                $this->sendToEmail();
         }
 
     }
