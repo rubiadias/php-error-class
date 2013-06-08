@@ -3,7 +3,7 @@
 use Intouch\Newrelic\Newrelic;
 
 
-namespace ricardodantas\PhpErrorClass;
+namespace ricardodantas;
 
 class PhpErrorClass{
 
