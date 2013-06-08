@@ -7,6 +7,7 @@
     "homepage": "https://github.com/ricardodantas/php-error-class",
     "time": "2013-06-07",
     "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Ricardo Dantas",
