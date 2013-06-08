@@ -1,36 +1,16 @@
 {
     "name": "ricardodantas/php-error-class",
     "description": "Provides a PHP class to handle errors and notify you via email, Zendesk or New Relic.",
-    "version": "1.0",
-    "type": "library",
-    "keywords": ["error"],
-    "homepage": "https://github.com/ricardodantas/php-error-class",
-    "time": "2013-06-07",
+    "require": {
+        "phpmailer/phpmailer": "*",
+        "intouch/newrelic": "*"
+    },
     "license": "MIT",
     "authors": [
         {
             "name": "Ricardo Dantas",
-            "email": "ricardodantas@gmail.com",
-            "homepage": "http://ricardodantas.com.br",
-            "role": "Developer"
+            "email": "ricardodantas@gmail.com"
         }
-
     ],
-    "support": {
-        "email": "ricardodantas@gmail.com",
-        "issues": "https://github.com/ricardodantas/php-error-class/issues",
-        "source": "https://github.com/ricardodantas/php-error-class"
-    },
-    "require": {
-        "php": ">=5.3.0",
-        "phpmailer/phpmailer": "*",
-        "intouch/newrelic": "@dev"
-
-    },
-    "autoload": {
-        "psr-0": {
-            "Ricardodantas\\PhpErrorClass\\": "src/"
-        }
-    },
     "minimum-stability": "dev"
 }

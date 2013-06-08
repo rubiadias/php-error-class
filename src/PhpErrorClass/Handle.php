@@ -3,9 +3,9 @@
 use Intouch\Newrelic\Newrelic;
 
 
-namespace ricardodantas\PhpErrorClass;
+namespace PhpErrorClass;
 
-class PhpErrorClass{
+class Handle{
 
     protected $settings = array();
     protected $send_to = 'email';
