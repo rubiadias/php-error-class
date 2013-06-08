@@ -14,8 +14,8 @@ class PhpErrorClass{
                                     "subject" => null,
                                     "description" => null,
                                     "recipient" => null,
-                                    "name"=>"REQUESTERNAME",
-                                    "requester"=>"REQUESTEREMAIL@EMAIL.EMAIL"
+                                    "name" => "REQUESTERNAME",
+                                    "requester" => "REQUESTEREMAIL@EMAIL.EMAIL"
                                 );
 
     protected $new_relic_configs = array(
