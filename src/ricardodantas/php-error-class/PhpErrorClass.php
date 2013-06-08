@@ -98,20 +98,15 @@ class PhpErrorClass{
 
     protected function sendToZendesk(){
 
-        $this->zendesk_configs = array(
-                "z_subject"=>"Help, my printer is on fire!",
-                "z_description"=>"help I need some help",
-                "z_recipient"=>"RECIPIENTEMAIL@EMAIL.EMAIL",
-                "z_name"=>"REQUESTERNAME",
-                "z_requester"=>"REQUESTEREMAIL@EMAIL.EMAIL"
-              );
+        $this->zendesk_configs = $this->settings;
+
 
         $create  = json_encode(array(
             'ticket' => array(
-            'subject' => $this->zendesk_configs['z_subject'],
-            'description' => $this->zendesk_configs['z_description'],
-            'requester' => array('name' => $this->zendesk_configs['z_name'],
-            'email' => $this->zendesk_configs['z_requester']))),
+            'subject' => $this->zendesk_configs['subject'],
+            'description' => $this->zendesk_configs['description'],
+            'requester' => array('name' => $this->zendesk_configs['name'],
+            'email' => $this->zendesk_configs['requester']))),
             JSON_FORCE_OBJECT
             );
 
