@@ -7,7 +7,7 @@ namespace PhpErrorClass;
 
 class Handle{
 
-    protected static $settings = array(), $via = 'email', $error_msg = null;
+    protected static $settings = array('api_key' => null ,'options' => array()), $via = 'email', $error_msg = null;
 
     protected static $zendesk_configs = array(
                                     "subject" => null,
@@ -131,6 +131,18 @@ class Handle{
 
     }
 
+    protected static function sendToAirbrake(){
+
+        $apiKey  = self::$settings['api_key'];
+        $options = self::$settings['options'];
+
+
+        $config = new \Airbrake\Configuration($apiKey, $options);
+        $client = new \Airbrake\Client($config);
+
+        $client->notifyOnError(self::$error_msg);
+
+    }
 
 
     protected static function notifyError(){
@@ -143,6 +155,10 @@ class Handle{
 
             case 'zendesk':
                 self::sendToZendesk();
+            break;
+
+            case 'airbrake':
+                self::sendToAirbrake();
             break;
 
             case 'email':
