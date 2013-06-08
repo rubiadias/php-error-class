@@ -91,7 +91,8 @@ class PhpErrorClass{
 
         $newrelic = new Newrelic( true );
         $newrelic->setAppName( $this->new_relic_configs['app_name'], $this->new_relic_configs['license'] );
-        $newrelic->noticeError( $this->error_msg );
+        if($newrelic->noticeError( $this->error_msg ) == false)
+            exit('[PhpErrorClass] - [New Relic] It is not possible to execute this action.');
 
     }
 
